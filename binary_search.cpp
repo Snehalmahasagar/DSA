@@ -36,4 +36,5 @@ int main()
 
     cout << "the leftmost occurence of the key:";
     left(array, 6, 3);
+    return 0;
 }
