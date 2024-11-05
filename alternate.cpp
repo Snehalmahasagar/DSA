@@ -8,7 +8,7 @@ void printarray(int arr[], int size)
         cout << arr[i] << " "; 
     }
     cout << endl;
-}
+} 
 
 void alternat(int arr[], int size)
 {
