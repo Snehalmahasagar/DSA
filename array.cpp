@@ -1,14 +1,6 @@
 #include <iostream>
 using namespace std;
-int i; 
-
-void reverse(int array[], int n)
-{
-    for (int i = n - 1; i >= 0; i--)
-    {
-        cout << "  " << array[i] << "  ";
-    }
-}
+int i;
 
 void printarray(int array[], int n)
 {
@@ -30,6 +22,4 @@ int main()
         cin >> array[i];
     }
     printarray(array, n);
-
-    reverse(array, n);
 }
