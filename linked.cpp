@@ -1,28 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
-class node
+class Node
 {
 public:
     int data;
-    node *next;
+    Node *next;
 
-public:
-    node(int data1, node *next1)
+    Node(int val)
     {
-        data = data1;
-        next = next1;
-    }
-    node(int data1)
-    {
-        data = data1;
+        data = val;
         next = nullptr;
     }
 };
-
 int main()
 {
-    vector<int> arr = {2, 5, 7, 8};
-    node x = node(arr[3], nullptr);
-    node *u = &x;
-    cout << u;
+    Node *head = new Node(1);
+    Node *temp = head;
+    int n = 5;
+    for (int i = 2; i <= n; i++)
+    {
+        temp->next = new Node(i);
+        temp = temp->next;
+    }
+
+    temp = head;
+    while (temp != nullptr)
+    {
+        /* code */
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
 }
