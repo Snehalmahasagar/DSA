@@ -12,7 +12,7 @@ public:
         next = nullptr;
     }
 };
-void *insert(Node *&head, int val)
+void insert(Node *&head, int val)
 {
     Node *newnode = new Node(val);
     newnode->next = head;
