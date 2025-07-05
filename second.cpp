@@ -1,3 +1,5 @@
+
+
 #include <bits/stdc++.h>
 using namespace std;
 int secondlarge(vector<int> arr)
@@ -10,5 +12,4 @@ int secondlarge(vector<int> arr)
 int main()
 {
     vector<int> arr = {23, 56, 678, 45};
-    secondlarge(arr);
 }
