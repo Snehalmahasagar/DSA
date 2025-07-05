@@ -18,6 +18,23 @@ void insert(Node *&head, int val)
     newnode->next = head;
     head = newnode;
 }
+void end(Node *&head, int val)
+{
+    Node *newnode = new Node(val);
+    if (head == nullptr)
+    {
+        head = newnode;
+        return;
+    }
+
+    Node *temp = head;
+    while (temp->next != nullptr)
+    {
+        /* code */
+        temp = temp->next;
+    }
+    temp->next = newnode;
+}
 int main()
 {
     Node *head = new Node(1);
@@ -30,6 +47,7 @@ int main()
         temp = temp->next;
     }
     insert(head, 0);
+    end(head, 6);
 
     temp = head;
     while (temp != nullptr)
