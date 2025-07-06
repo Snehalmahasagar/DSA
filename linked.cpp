@@ -53,11 +53,75 @@ void postion(Node *&head, int val, int pos)
     }
     if (temp == nullptr)
     {
-        cout << "position is out of bound";
+        cout << "position is out of bound" << endl;
         return;
     }
     newnode->next = temp->next;
     temp->next = newnode;
+}
+void deleteHead(Node *&head)
+{
+    if (head == nullptr)
+    {
+        cout << "list is empty" << endl;
+        return;
+    }
+    Node *temp = head;
+    head = head->next;
+    delete temp;
+}
+
+void deleteEnd(Node *&head)
+{
+    if (head == nullptr)
+    {
+        cout << "list is empty" << endl;
+        return;
+    }
+    if (head->next == nullptr)
+    {
+        delete head;
+        head = nullptr;
+        return;
+    }
+    Node *temp = head;
+    while (temp->next->next != nullptr)
+    {
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = nullptr;
+}
+void deletePos(Node *&head, int pos)
+{
+    if (head == nullptr)
+    {
+        cout << "list is empty" << endl;
+        return;
+    }
+    if (pos == 1)
+    {
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+        return;
+    }
+    Node *temp = head;
+    int cnt = 1;
+    while (temp != nullptr && cnt < pos - 1)
+    {
+        /* code */
+        temp = temp->next;
+        cnt++;
+        }
+    if (temp == nullptr || temp->next == nullptr)
+    {
+        cout << "out of bound";
+        return;
+    }
+    Node *delnode = temp->next;
+    temp->next = temp->next->next;
+    delete delnode;
 }
 int main()
 {
@@ -73,6 +137,9 @@ int main()
     insert(head, 0);
     end(head, 6);
     postion(head, 5, 10);
+    // deleteHead(head);
+    // deleteEnd(head);
+    deletePos(head, 3);
 
     temp = head;
     while (temp != nullptr)
