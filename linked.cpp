@@ -35,6 +35,30 @@ void end(Node *&head, int val)
     }
     temp->next = newnode;
 }
+void postion(Node *&head, int val, int pos)
+{
+    Node *newnode = new Node(val);
+    if (pos == 1)
+    {
+        newnode->next = head;
+        head = newnode;
+        return;
+    }
+    Node *temp = head;
+    int cnt = 1;
+    while (temp != nullptr && cnt < pos - 1)
+    {
+        temp = temp->next;
+        cnt++;
+    }
+    if (temp == nullptr)
+    {
+        cout << "position is out of bound";
+        return;
+    }
+    newnode->next = temp->next;
+    temp->next = newnode;
+}
 int main()
 {
     Node *head = new Node(1);
@@ -48,6 +72,7 @@ int main()
     }
     insert(head, 0);
     end(head, 6);
+    postion(head, 5, 10);
 
     temp = head;
     while (temp != nullptr)
