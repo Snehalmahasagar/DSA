@@ -22,6 +22,13 @@ int power(int n, int m)
 
     return n * power(n, m - 1);
 }
+int numPrint(int n)
+{
+    if (n == 0)
+        return 1;
+    cout << n << " ";
+    return numPrint(n - 1);
+}
 int main()
 {
     int n = 5;
@@ -31,8 +38,8 @@ int main()
         /* code */
         cout << fibo(i) << " ";
     }
-    cout << "the factorial of the number is: " << factorial(n);
-    cout << "the power of the given number is:  " << power(n, m);
-
+    cout << "the factorial of the number is: " << factorial(n) << endl;
+    cout << "the power of the given number is:  " << power(n, m) << endl;
+    cout << "teh reverse order of the number is :  " << numPrint(n) << endl;
     return 0;
 }
