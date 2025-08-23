@@ -14,16 +14,27 @@ public:
         prev = nullptr;
     }
 };
+
 void printList(Node *head)
 {
     Node *temp = head;
     while (temp)
     {
-        /* code */
+
         cout << temp->data << " ";
         temp = temp->next;
     }
     cout << endl;
+}
+
+void intersectEn(Node *head)
+{
+    Node *temp = head;
+    while (temp)
+    {
+
+        temp = temp->next;
+    }
 }
 
 void insertEnd(Node *&head, int val)
@@ -38,7 +49,7 @@ void insertEnd(Node *&head, int val)
     Node *temp = head;
     while (temp->next)
     {
-        /* code */
+
         temp = temp->next;
     }
 

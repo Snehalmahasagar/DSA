@@ -9,6 +9,12 @@ int fibo(int n)
 
     return fibo(n - 1) + fibo(n - 2);
 }
+int factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
 int main()
 {
     int n = 5;
@@ -17,6 +23,7 @@ int main()
         /* code */
         cout << fibo(i) << " ";
     }
+    cout << "the factorial of the number is: " << factorial(n);
 
     return 0;
 }

@@ -93,6 +93,7 @@ void deleteEnd(Node *&head)
     temp->next = nullptr;
 }
 void deletePos(Node *&head, int pos)
+
 {
     if (head == nullptr)
     {
@@ -113,7 +114,7 @@ void deletePos(Node *&head, int pos)
         /* code */
         temp = temp->next;
         cnt++;
-        }
+    }
     if (temp == nullptr || temp->next == nullptr)
     {
         cout << "out of bound";
@@ -122,6 +123,24 @@ void deletePos(Node *&head, int pos)
     Node *delnode = temp->next;
     temp->next = temp->next->next;
     delete delnode;
+}
+
+void intersect(Node *&headA, Node *&headB)
+{
+    if (!headA || !headB)
+    {
+        return;
+    }
+    Node *a = headA;
+    Node *b = headB;
+
+    while (a != b)
+    {
+        /* code */
+        a = a ? a->next : headB;
+        b = b ? b->next : headA;
+    }
+    cout << a;
 }
 int main()
 {
