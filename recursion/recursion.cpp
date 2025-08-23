@@ -29,6 +29,12 @@ int numPrint(int n)
     cout << n << " ";
     return numPrint(n - 1);
 }
+int sum(int n)
+{
+    if (n == 0)
+        return 0;
+    return n + sum(n - 1);
+}
 int main()
 {
     int n = 5;
@@ -41,5 +47,6 @@ int main()
     cout << "the factorial of the number is: " << factorial(n) << endl;
     cout << "the power of the given number is:  " << power(n, m) << endl;
     cout << "teh reverse order of the number is :  " << numPrint(n) << endl;
+    cout << "the sum of the given series is: " << sum(n) << endl;
     return 0;
 }
