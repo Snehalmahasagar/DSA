@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-int table(int i)
+int table(int n, int i)
 {
-    int n = 4;
 
     if (i > 10)
         return 1;
-    cout << n * table(i + 1) << endl;
+    cout << n << "*" << i << "=" << n * i << endl;
+    table(n, i + 1);
 }
 int main()
 {
-    int i = 1;
+    int n = 4;
     cout << "the table of the given number is " << endl;
-    table(i);
+    table(n, 1);
     return 0;
 }
