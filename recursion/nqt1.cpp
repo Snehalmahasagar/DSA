@@ -1,30 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
-    vector<int>arr = {10, 5 ,10, 8 ,3 ,8};
-    int n = arr.size();
-    int second = INT_MIN; 
-    int max = INT_MIN;
-    unordered_map<int, int> freq;
-    for(int i = 0 ; i <n ; i ++){
-        if(arr[i] > max){
-            second = max;
-            max = arr[i];
-        }
-        else if(arr[i] > second && arr[i] != max){
-            second = arr[i];
-        }
-        freq[arr[i]] ++;
 
-     
+int main() {
+    vector<int> arr = {1,3,5,2};
+    int size = arr.size();
+    int n = size +1;
+    int expected = n * (n+1)/2;
+    int actual =0;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        actual += arr[i];
     }
-    cout << "second max: " << second <<endl;
+    int missing = expected-actual;
+    cout << missing;
+    
+
    
-    for(int  i = 0 ; i <n ; i++){
-        if(freq[arr[i]] <= 1){
-            cout << "non- repeating: "<<arr[i];
-            break;
-        }
-    }
+
+    
     
 }
